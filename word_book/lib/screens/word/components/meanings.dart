@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../widgets/white_container.dart';
 import '../../../helpers/gradient_helper.dart';
+import '../../../screens/word/components/no_data_text.dart';
+
 import './meanings_row.dart';
 
 class Meanings extends StatelessWidget {
@@ -41,7 +43,7 @@ class Meanings extends StatelessWidget {
               top: _mediaQuery.size.height * 0.02,
               right: _mediaQuery.size.height * 0.015,
               left: _mediaQuery.size.height * 0.015,
-              bottom: _mediaQuery.size.height * 0.02,
+              bottom: _mediaQuery.size.height * 0.018,
             ),
             child: Text(
               'Meanings',
@@ -54,17 +56,19 @@ class Meanings extends StatelessWidget {
               ),
             ),
           ),
-          Expanded(
-            child: ListView.builder(
-              padding: const EdgeInsets.all(0),
-              itemCount: meaningsList.length,
-              itemBuilder: (_, index) => WordMeaningCard(
-                meaningCategoryList: meaningsList[index],
-                word: word,
-              ),
-            ),
-            // child: MeaningItem(meaningsList: _meaningsList, mediaQuery: _mediaQuery),
-          ),
+          (meaningsList.length == 0 || meaningsList[0] == null)
+              ? NoDataText()
+              : Expanded(
+                  child: ListView.builder(
+                    padding: const EdgeInsets.all(0),
+                    itemCount: meaningsList.length,
+                    itemBuilder: (_, index) => WordMeaningCard(
+                      meaningCategoryList: meaningsList[index],
+                      word: word,
+                    ),
+                  ),
+                  // child: MeaningItem(meaningsList: _meaningsList, mediaQuery: _mediaQuery),
+                ),
         ],
       ),
     );

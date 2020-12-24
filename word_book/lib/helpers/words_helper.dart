@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 
 // here i'll handle the words api
@@ -15,6 +16,11 @@ class WordHelper {
       final _response = await http.get(_url);
       // decode the response
       final dynamic _jsonResponse = json.decode(_response.body);
+      //check the response
+      final List<dynamic> garbage = [];
+      print(_jsonResponse.runtimeType);
+      if (_jsonResponse.runtimeType != garbage.runtimeType)
+        throw PlatformException(code: 'nope');
       // extract all the relavent information.
       dynamic _phoneticsList = [];
       dynamic _meaningsList = [];
@@ -28,6 +34,7 @@ class WordHelper {
       return _result;
     } catch (e) {
       print('Error @ word Api = $e');
+      // rethrow the error to be handled with a UI Element.
       throw e;
     }
   }

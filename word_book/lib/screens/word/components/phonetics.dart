@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
 
+import '../../../screens/word/components/no_data_text.dart';
 import '../../../helpers/gradient_helper.dart';
 import '../../../widgets/white_container.dart';
 import './phonetics_row.dart';
@@ -29,7 +31,7 @@ class Phonetics extends StatelessWidget {
       margin: EdgeInsets.symmetric(
         vertical: _mediaQuery.size.height * 0.01,
       ),
-      height: _mediaQuery.size.height * 0.1 +
+      height: _mediaQuery.size.height * 0.12 +
           _mediaQuery.size.height * 0.09 * _phoneticsList.length,
       width: _mediaQuery.size.width * 0.92,
       child: Column(
@@ -52,8 +54,8 @@ class Phonetics extends StatelessWidget {
               ),
             ),
           ),
-          (_phoneticsList[0] == null)
-              ? Text('No Data.')
+          (_phoneticsList.length == 0 || _phoneticsList[0] == null)
+              ? NoDataText()
               : Expanded(
                   child: ListView.builder(
                     padding: const EdgeInsets.all(0),

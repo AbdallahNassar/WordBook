@@ -70,10 +70,7 @@ class _HomeContainerState extends State<HomeContainer> {
                                 _mediaQuery.size.height * 0.01,
                               )
                             : Platform.isAndroid
-                                ? Theme.of(context)
-                                    .textTheme
-                                    .headline2
-                                    .copyWith(
+                                ? Theme.of(context).textTheme.button.copyWith(
                                       fontSize: 15.0,
                                     )
                                 : CupertinoTheme.of(context)

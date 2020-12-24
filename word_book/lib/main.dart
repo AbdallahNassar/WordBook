@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:word_book/test.dart';
 
 import './screens/home/home_screen.dart';
 import './screens/word/word_screen.dart';
@@ -43,12 +44,12 @@ class WordBook extends StatelessWidget {
             // home screen chips style
             button: GoogleFonts.poppins(
               color: Colors.black,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w500,
               fontSize: 23.0,
             ),
             // phonetics list tile text style
             headline2: GoogleFonts.poppins(
-              color: Colors.white,
+              color: Colors.black,
               fontSize: 17.0,
               fontWeight: FontWeight.bold,
             ),
@@ -75,7 +76,7 @@ class WordBook extends StatelessWidget {
             pickerTextStyle: GoogleFonts.poppins(
               color: Colors.black,
               fontSize: 23.0,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w500,
             ),
             // phonetics list tile text style
             tabLabelTextStyle: GoogleFonts.comfortaa(
