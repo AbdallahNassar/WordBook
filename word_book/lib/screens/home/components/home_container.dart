@@ -42,7 +42,6 @@ class _HomeContainerState extends State<HomeContainer> {
     // to create more than one line of chips if there isn't enough space
     return WhiteContainer(
       width: _mediaQuery.size.width * 0.8,
-      height: _mediaQuery.size.height * 0.58,
       child: SingleChildScrollView(
         child: Column(children: [
           HomeText(widgetText: 'Choose your Language'),
@@ -96,6 +95,7 @@ class _HomeContainerState extends State<HomeContainer> {
           Padding(
             padding: const EdgeInsets.only(
               right: 8.0,
+              bottom: 8.0,
             ),
             child: NextArrow(
               icon: Icon(

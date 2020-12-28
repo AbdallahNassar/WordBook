@@ -26,6 +26,7 @@ class SomethingWentWrong extends StatelessWidget {
         children: [
           SvgPicture.asset(
             'assets/images/error_2.svg',
+            height: _mediaQuery.size.height * 0.4,
           ),
           Text(
             'Something Went Wrong.\n$message',

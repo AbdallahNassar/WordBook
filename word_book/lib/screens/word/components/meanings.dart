@@ -31,10 +31,10 @@ class Meanings extends StatelessWidget {
             : _mediaQuery.size.height * 0.37,
       ),
       margin: EdgeInsets.symmetric(
-        vertical: _mediaQuery.size.height * 0.005,
+        vertical: 0,
       ),
       height: _mediaQuery.size.height * 0.08 +
-          _mediaQuery.size.height * 0.13 * meaningsList.length,
+          _mediaQuery.size.height * 0.18 * meaningsList.length,
       width: _mediaQuery.size.width * 0.92,
       child: Column(
         children: [

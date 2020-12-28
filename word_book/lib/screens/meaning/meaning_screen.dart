@@ -51,6 +51,9 @@ class MeaningScreen extends StatelessWidget {
         ),
         child: Column(
           children: [
+            SizedBox(
+              height: _mediaQuery.size.height * 0.05,
+            ),
             Row(
               children: [
                 BackArrow(),
@@ -82,7 +85,7 @@ class MeaningScreen extends StatelessWidget {
             Column(
               children: [
                 Container(
-                  height: _mediaQuery.size.height * 0.82,
+                  height: _mediaQuery.size.height * 0.71,
                   width: _mediaQuery.size.width * 0.94,
                   child: Column(
                     children: [

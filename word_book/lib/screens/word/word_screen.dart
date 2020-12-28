@@ -75,7 +75,7 @@ class _WordScreenState extends State<WordScreen> with TickerProviderStateMixin {
       });
     } catch (e) {
       print(
-        'error @ calling api from word screen , error message : ${e.runtimeType}',
+        'error @ calling api from word screen,error message : ${e.runtimeType}',
       );
 
       setState(() {
@@ -150,6 +150,9 @@ class _WordScreenState extends State<WordScreen> with TickerProviderStateMixin {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                SizedBox(
+                  height: _mediaQuery.size.height * 0.03,
+                ),
                 BackArrow(),
                 Container(
                   alignment: Alignment.center,
@@ -159,9 +162,7 @@ class _WordScreenState extends State<WordScreen> with TickerProviderStateMixin {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(25.0),
                   ),
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 20.0,
-                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
                   child: TextField(
                     style: GradientHelper.mGetSearchCardTextStyle(
                       context,
@@ -175,7 +176,6 @@ class _WordScreenState extends State<WordScreen> with TickerProviderStateMixin {
                       hintText: 'Enter a word',
                       hintStyle: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 20.0,
                         color: Colors.black,
                       ),
                     ),
@@ -196,7 +196,7 @@ class _WordScreenState extends State<WordScreen> with TickerProviderStateMixin {
                   SomethingWentWrong(message: _hasErrors[0]),
                 if (_isLoading && _hasErrors.length == 0) LoadingIndicator(),
                 if (_apiResults != null && _hasErrors.length == 0)
-                  Phonetics(phoneticsList: _phoneticsList),
+                  Phonetics(phoneticsList: _phoneticsList, word: _word),
                 if (_isLoading && _hasErrors.length == 0) LoadingIndicator(),
                 if (_apiResults != null && _hasErrors.length == 0)
                   Meanings(

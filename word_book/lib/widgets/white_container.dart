@@ -13,7 +13,7 @@ class WhiteContainer extends StatelessWidget {
   const WhiteContainer({
     Key key,
     @required this.child,
-    @required this.height,
+    this.height,
     this.width,
     this.constraints,
     this.margin,

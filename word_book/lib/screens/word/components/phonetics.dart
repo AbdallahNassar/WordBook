@@ -9,14 +9,15 @@ import './phonetics_row.dart';
 
 class Phonetics extends StatelessWidget {
   //================================ Parameters ================================
-  final List _phoneticsList;
+  final List phoneticsList;
   final AudioPlayer _audioPlayer = AudioPlayer();
+  final String word;
   //================================ Constructor ===============================
   Phonetics({
     Key key,
-    @required List phoneticsList,
-  })  : _phoneticsList = phoneticsList,
-        super(key: key);
+    @required this.phoneticsList,
+    @required this.word,
+  }) : super(key: key);
   //============================================================================
 
   @override
@@ -32,7 +33,7 @@ class Phonetics extends StatelessWidget {
         vertical: _mediaQuery.size.height * 0.01,
       ),
       height: _mediaQuery.size.height * 0.12 +
-          _mediaQuery.size.height * 0.09 * _phoneticsList.length,
+          _mediaQuery.size.height * 0.12 * phoneticsList.length,
       width: _mediaQuery.size.width * 0.92,
       child: Column(
         children: [
@@ -54,16 +55,16 @@ class Phonetics extends StatelessWidget {
               ),
             ),
           ),
-          (_phoneticsList.length == 0 || _phoneticsList[0] == null)
+          (phoneticsList.length == 0 || phoneticsList[0] == null)
               ? NoDataText()
               : Expanded(
                   child: ListView.builder(
                     padding: const EdgeInsets.all(0),
-                    itemCount: _phoneticsList.length,
+                    itemCount: phoneticsList.length,
                     itemBuilder: (_, index) => PhoneticsRow(
                       audioPlayer: _audioPlayer,
-                      phoneticsText: _phoneticsList[index]['text'],
-                      phoneticsAudio: _phoneticsList[index]['audio'],
+                      phoneticsText: word,
+                      phoneticsAudio: phoneticsList[index]['audio'],
                     ),
                   ),
                 )

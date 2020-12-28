@@ -59,12 +59,16 @@ class PhoneticsRow extends StatelessWidget {
         title: Container(
           alignment: Alignment.topLeft,
           child: FittedBox(
-            fit: BoxFit.scaleDown,
+            fit: BoxFit.contain,
             child: Text(
-              (phoneticsText),
+              // to remove the '/' at the beginning and end of the text form
+              // the api itself
+              (phoneticsText.replaceAll('/', '')),
               style: Platform.isAndroid
-                  ? Theme.of(context).textTheme.headline2
-                  : CupertinoTheme.of(context).textTheme.tabLabelTextStyle,
+                  ? Theme.of(context).textTheme.headline4
+                  : CupertinoTheme.of(context)
+                      .textTheme
+                      .dateTimePickerTextStyle,
             ),
           ),
         ),

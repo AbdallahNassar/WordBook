@@ -83,8 +83,15 @@ class WordMeaningCard extends StatelessWidget {
               child: Text(
                 word,
                 style: Platform.isAndroid
-                    ? Theme.of(context).textTheme.headline2
-                    : CupertinoTheme.of(context).textTheme.tabLabelTextStyle,
+                    ? Theme.of(context).textTheme.button.copyWith(
+                          fontSize: 19,
+                        )
+                    : CupertinoTheme.of(context)
+                        .textTheme
+                        .pickerTextStyle
+                        .copyWith(
+                          fontSize: 19,
+                        ),
               ),
             ),
           ),
