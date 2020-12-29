@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:translator/translator.dart';
-import 'package:word_book/helpers/language_helper.dart';
 
 import '../../widgets/back_arrow.dart';
 import '../../helpers/gradient_helper.dart';
