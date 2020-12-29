@@ -4,6 +4,7 @@ Flutter Mobile Application for Android/IOS
 
 Your normal Dictionary, with audio and many many sentences for you to fully understand the word.
 
+<img src="word_book/Screenshots/1.png" height ="300" >
 
 # Concepts Used:
 - OOP
